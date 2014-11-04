@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\CupComponent.cs">
+    <Files>
+      <File FileName="Assets\Script\GameController.cs" Line="70" Column="3" />
+      <File FileName="Assets\Script\CupComponent.cs" Line="46" Column="58" />
+      <File FileName="Assets\Script\CupAnimator.cs" Line="14" Column="21" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
