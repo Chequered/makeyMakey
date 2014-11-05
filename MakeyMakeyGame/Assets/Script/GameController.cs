@@ -5,7 +5,8 @@ using System.Collections.Generic;
 public enum ShuffleState
 {
 	Shuffling,
-	None
+	None,
+	Init
 }
 
 public class GameController : MonoBehaviour {
@@ -25,8 +26,8 @@ public class GameController : MonoBehaviour {
 	private void Start(){
 		//get all the cups in the scene
 		GameObject[] sceneCups = GameObject.FindGameObjectsWithTag("cup");
-		this.state = ShuffleState.None;
 		this.shuffles = 0;
+		this.state = ShuffleState.Init;
 
 		//add the cups in the scene to the List
 		for(int i = 0; i < sceneCups.Length; i++){
@@ -48,6 +49,13 @@ public class GameController : MonoBehaviour {
 		for(int i = 0; i < keys.Count; i++){
 			cups[i].GetComponent<CupComponent>().setKey(keys[i]);
 		}
+
+		Invoke("Init", 2);
+
+	}
+
+	private void Init(){
+		this.state = ShuffleState.None;
 	}
 
 	private void Update(){
