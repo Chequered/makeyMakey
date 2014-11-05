@@ -16,7 +16,7 @@ public class CupComponent : MonoBehaviour
 	protected Vector3 goTo = new Vector3();
 	public GameObject cup;
 
-	protected float speed = 15F;
+	protected float speed = 10F;
 
 	protected AnimState state;
 
@@ -84,4 +84,3 @@ public class CupComponent : MonoBehaviour
 	}
 
 }
-
