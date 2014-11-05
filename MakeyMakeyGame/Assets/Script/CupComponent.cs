@@ -15,8 +15,9 @@ public class CupComponent : MonoBehaviour
 	protected Vector3 shuffleRight;
 	protected Vector3 goTo = new Vector3();
 	public GameObject cup;
+	public GameObject spike;
 
-	protected float speed = 10F;
+	protected float speed = 8F;
 
 	protected AnimState state;
 
@@ -30,13 +31,13 @@ public class CupComponent : MonoBehaviour
 
 	void Update() {
 		if(state == AnimState.Left){
-			transform.position = Vector3.Lerp(transform.position, goTo, speed * Time.deltaTime);
+			transform.position = Vector3.MoveTowards(transform.position, goTo, speed * Time.deltaTime);
 			if(transform.position == goTo){
 				state = AnimState.None;
 			}
 		}else if(state == AnimState.Right){
-			transform.position = Vector3.Lerp(transform.position, goTo, speed * Time.deltaTime);
-			if(transform.position == goTo){
+			transform.position = Vector3.MoveTowards(transform.position, goTo, speed * Time.deltaTime);
+			if(transform.position.z == goTo.z){
 				state = AnimState.None;
 			}
 		}
@@ -81,6 +82,14 @@ public class CupComponent : MonoBehaviour
 
 	private void setID(int id){
 		this.id = id;
+	}
+
+	public bool hasSpike(){
+		if(spike.renderer.enabled){
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 }
